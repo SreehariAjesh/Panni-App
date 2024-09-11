@@ -3,8 +3,8 @@ const filesToCache = [
   '/',
   '/index.html',
   '/styles.css',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png'
+  'images/6262d795-9c1a-4c99-9423-cd1499fce84c.png',
+  'images/6262d795-9c1a-4c99-9423-cd1499fce84c (1).png'
 ];
 
 self.addEventListener('install', event => {
