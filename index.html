@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PWA App</title>
+  <title>Panni Academy</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
-  <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
-  </script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <h1>Welcome to My PWA</h1>
-  <p>This is a simple Progressive Web App.</p>
-  <button id="add-to-home" style="display: none;">Add to Home Screen</button>
+  <!-- Website Content -->
+  <div id="web-content">
+    <h1>Welcome to the Panni Academy Website</h1>
+    <p>This content is displayed on the website.</p>
+  </div>
+
+  <!-- PWA Content -->
+  <div id="app-content" style="display:none;">
+    <h1>Welcome to the Panni Academy App</h1>
+    <p>This content is displayed in the PWA app.</p>
+  </div>
 </body>
 </html>
