@@ -2,7 +2,7 @@
   "name": "Panni Academy",
   "short_name": "Panni Academy",
   "description": "The Best Water Sports Academy",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
