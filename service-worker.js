@@ -30,8 +30,8 @@ self.addEventListener('install', event => {
         '/styles.css',
         '/app.js',
         '/manifest.json',
-        '/icons/icon-192x192.png',
-        '/icons/icon-512x512.png'
+        'images/6262d795-9c1a-4c99-9423-cd1499fce84c.png',
+        'images/6262d795-9c1a-4c99-9423-cd1499fce84c (1).png'
       ]);
     })
   );
