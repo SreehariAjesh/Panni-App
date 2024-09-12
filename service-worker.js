@@ -50,4 +50,18 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
+window.addEventListener('DOMContentLoaded', (event) => {
+  // Check if the app is running in standalone mode (i.e., as a PWA)
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+  if (isStandalone) {
+    // Display PWA content and hide website content
+    document.getElementById('app-content').style.display = 'block';
+    document.getElementById('web-content').style.display = 'none';
+  } else {
+    // Display website content and hide PWA content
+    document.getElementById('web-content').style.display = 'block';
+    document.getElementById('app-content').style.display = 'none';
+  }
+});
 
