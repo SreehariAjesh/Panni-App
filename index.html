@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWA App</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="styles.css">
   <script>
 if ('serviceWorker' in navigator) {
@@ -22,6 +22,6 @@ if ('serviceWorker' in navigator) {
 <body>
   <h1>Welcome to My PWA</h1>
   <p>This is a simple Progressive Web App.</p>
-  <button>Add to Home Screen</button>
+  <button id="add-to-home" style="display: none;">Add to Home Screen</button>
 </body>
 </html>
