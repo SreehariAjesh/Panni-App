@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panni Academy</title>
+  <title>Panni Academy PWA</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
 <body>
+
   <!-- Website Content -->
   <div id="web-content">
     <h1>Welcome to the Panni Academy Website</h1>
@@ -19,5 +21,19 @@
     <h1>Welcome to the Panni Academy App</h1>
     <p>This content is displayed in the PWA app.</p>
   </div>
+
+  <!-- Add to Home Button -->
+  <button id="add-to-home" style="display:none;">Add to Home Screen</button>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
 </body>
 </html>
