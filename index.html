@@ -3,35 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panni Academy PWA</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
-</head>
-<body>
+  <title>PANNI ACADEMY OF WATER SPORTS</title>
 
-  <!-- Website Content -->
-  <div id="web-content">
-    <h1>Welcome to the Panni Academy Website</h1>
-    <p>This content is displayed on the website.</p>
-  </div>
+  <!-- Favicon and PWA manifest -->
+  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
 
-  <!-- PWA Content -->
-  <div id="app-content" style="display:none;">
-    <h1>Welcome to the Panni Academy App</h1>
-    <p>This content is displayed in the PWA app.</p>
-  </div>
-
-  <!-- Add to Home Button -->
-  <button id="add-to-home" style="display:none;">Add to Home Screen</button>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-messaging.js"></script>
 
   <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <h1>Welcome to Panni Academy</h1>
+  <button id="requestNotificationBtn">Enable Notifications</button>
+  <button id="notifyButton">Send Test Notification</button>
+
+  <script src="app.js"></script>
+  <script>
+    // Register Service Worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function(registration) {
-          console.log('Service Worker registered with scope:', registration.scope);
-        }).catch(function(error) {
-          console.log('Service Worker registration failed:', error);
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log('Service Worker Registered:', registration);
+        })
+        .catch(error => {
+          console.error('Service Worker Registration Failed:', error);
         });
     }
   </script>
