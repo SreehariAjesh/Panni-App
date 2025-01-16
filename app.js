@@ -16,7 +16,7 @@ function requestNotificationPermission() {
 
 // Get the FCM Token
 function getFCMToken() {
-  messaging.getToken({ vapidKey: "YOUR_PUBLIC_VAPID_KEY" })
+  messaging.getToken({ vapidKey: "BEvNfAHngb0nSlIPh3QDD7ScJ9YIM1u97FhdLAQmoWj6LHpVRNuYAgE1YOaia5M-mrpQ_PJkncGfsaWNwRTXng0" })
     .then((token) => {
       if (token) {
         console.log("FCM Token:", token);
