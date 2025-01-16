@@ -44,9 +44,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
+        window.alert('User accepted the A2HS prompt');
       } else {
-        console.log('User dismissed the A2HS prompt');
+        window.alert('User dismissed the A2HS prompt');
       }
       deferredPrompt = null;
     });
@@ -86,19 +86,19 @@ function getFCMToken() {
   messaging.getToken({ vapidKey: "BEvNfAHngb0nSlIPh3QDD7ScJ9YIM1u97FhdLAQmoWj6LHpVRNuYAgE1YOaia5M-mrpQ_PJkncGfsaWNwRTXng0" })
     .then((token) => {
       if (token) {
-        console.log("FCM Token:", token);
+        window.alert("FCM Token:", token);
         // Store or send this token to your server for notifications
       } else {
-        console.log("No FCM Token available.");
+        window.alert("No FCM Token available.");
       }
     }).catch((error) => {
-      console.log("Error getting FCM Token:", error);
+      window.alert("Error getting FCM Token:", error);
     });
 }
 
 // Handle Incoming Messages (Foreground)
 messaging.onMessage((payload) => {
-  console.log("Message received:", payload);
+  window.alert("Message received:", payload);
   new Notification(payload.notification.title, {
     body: payload.notification.body,
     icon: "/Images/32x32.png"
