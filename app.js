@@ -1,5 +1,38 @@
 let deferredPrompt;
+// test 
+const messaging = firebase.messaging();
 
+// Request Notification Permission and Get Token
+function requestNotificationPermission() {
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      console.log("Notification permission granted.");
+      getFCMToken();
+    } else {
+      console.log("Notification permission denied.");
+    }
+  });
+}
+
+// Get the FCM Token
+function getFCMToken() {
+  messaging.getToken({ vapidKey: "YOUR_PUBLIC_VAPID_KEY" })
+    .then((token) => {
+      if (token) {
+        console.log("FCM Token:", token);
+        alert("FCM Token:\n" + token); // Show token in an alert
+        document.getElementById("fcmToken").innerText = token; // Display token on screen
+      } else {
+        console.log("No FCM Token available.");
+      }
+    }).catch((error) => {
+      console.log("Error getting FCM Token:", error);
+    });
+}
+
+// Call function when page loads
+requestNotificationPermission();
+//test over
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
