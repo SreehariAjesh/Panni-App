@@ -34,6 +34,13 @@ const firebaseConfig = {
   <h1>Welcome to Panni Academy</h1>
   <button id="requestNotificationBtn">Enable Notifications</button>
   <button id="notifyButton">Send Test Notification</button>
+<button id="requestTokenBtn">Get Notification Token</button>
+<p><strong>Your FCM Token:</strong></p>
+<p id="fcmToken" style="word-break: break-all;"></p>
+
+<script>
+  document.getElementById("requestTokenBtn").addEventListener("click", getFCMToken);
+</script>
 
   <script src="app.js"></script>
   <script>
