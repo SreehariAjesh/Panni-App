@@ -38,6 +38,7 @@
                 serviceWorkerRegistration: registration,
                 vapidKey: 'BEvNfAHngb0nSlIPh3QDD7ScJ9YIM1u97FhdLAQmoWj6LHpVRNuYAgE1YOaia5M-mrpQ_PJkncGfsaWNwRTXng0' }).then((currentToken) => {
                 if (currentToken) {
+                    document.getElementById("tokenDisplay").innerText = "Token: " + currentToken;
                     window.alert("Token is: "+currentToken);
                     // Send the token to your server and update the UI if necessary
                     // ...
