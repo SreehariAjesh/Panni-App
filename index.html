@@ -18,13 +18,14 @@
 
     // Firebase Configuration
     const firebaseConfig = {
-        apiKey: "YOUR-API-KEY",
-        authDomain: "YOUR-AUTH-DOMAIN",
-        projectId: "YOUR-PROJECT-ID",
-        storageBucket: "YOUR-STORAGE-BUCKET",
-        messagingSenderId: "YOUR-MESSAGING-SENDER-ID",
-        appId: "YOUR-APP-ID"
-    };
+      apiKey: "AIzaSyCV4ObQSMFZ2TgdLY1YqgarpmuUOQmvJGg",
+      authDomain: "panni-2bdd6.firebaseapp.com",
+      projectId: "panni-2bdd6",
+      storageBucket: "panni-2bdd6.firebasestorage.app",
+      messagingSenderId: "987197050153",
+      appId: "1:987197050153:web:85744ce40318a3de40fb38",
+      measurementId: "G-RXC45WCBNG"
+};
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
@@ -35,7 +36,7 @@
     navigator.serviceWorker.register("sw.js").then(registration => {
         getToken(messaging, {
             serviceWorkerRegistration: registration,
-            vapidKey: 'YOUR-VAPID-KEY'
+            vapidKey: 'BEvNfAHngb0nSlIPh3QDD7ScJ9YIM1u97FhdLAQmoWj6LHpVRNuYAgE1YOaia5M-mrpQ_PJkncGfsaWNwRTXng0'
         }).then(async (currentToken) => {
             if (currentToken) {
                 document.getElementById("tokenDisplay").innerText = "FCM Token: " + currentToken;
